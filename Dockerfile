@@ -5,7 +5,7 @@ RUN mkdir /app
 
 # Update apt sources and extra programs (python:slim)
 RUN apt update
-RUN apt install -y git python3-pip nano vim screen microcom
+RUN apt install -y git bash python3 python3-pip nano vim screen microcom
 
 # Dependency for serial communication
 RUN pip3 install pyserial
