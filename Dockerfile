@@ -12,5 +12,6 @@ RUN pip3 install pyserial
 
 # Add and run application
 ADD application.py /app/application.py
-CMD [ "python", "/app/application.py" ]
 
+# Run application at startup
+#CMD [ "python", "/app/application.py" ]
