@@ -1,11 +1,13 @@
 import serial
 import time
+import os
 
 cap = 'Module-id:'
 point = 'U-Boot>'
 enter = '\r\n'.encode('utf-8')
+device = '/dev/' + os.popen('ls /dev|grep USB').read().strip('\n')
 
-with serial.Serial('/dev/ttyUSB0', 115200, timeout=0.1) as ser:
+with serial.Serial(device, 115200, timeout=0.1) as ser:
     print('Waiting to break into U-Boot')
     while True:
         line = ser.readline().decode('utf-8', 'ignore')#;print(line)
