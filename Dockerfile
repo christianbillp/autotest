@@ -1,4 +1,6 @@
-FROM ubuntu:16.04
+#FROM ubuntu:16.04
+FROM debian
+
 
 # Create folder for application
 RUN mkdir /app
@@ -12,6 +14,7 @@ RUN pip3 install pyserial
 
 # Add and run application
 ADD application.py /app/application.py
+ADD uboot.py /app/uboot.py
 
 # Run application at startup
 CMD [ "python3", "/app/application.py" ]
